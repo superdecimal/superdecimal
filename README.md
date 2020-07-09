@@ -1,4 +1,4 @@
-# Hello Github!
+# Hello World!
 
 ```golang
 package main
