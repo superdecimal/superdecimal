@@ -15,8 +15,7 @@ func main() {
 		for i := 0; i < 10; i++ {
 			hellos <- "Hello World"
 		}
-
-		done <- true
+		close(hellos)
 	}()
 
 	go func() {
@@ -26,6 +25,7 @@ func main() {
 				fmt.Println(hello)
 			}
 		}
+		done <- true
 	}()
 
 	<-done
